@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const CardItem = ({ card, onClick }) => {
+const CardItem = ({ card, onClick}) => {
     return (
         <Div onClick={() => onClick(card.id)}>
            <p>{card.id}</p>

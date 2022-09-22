@@ -5,7 +5,7 @@ import CardsGrid from './Cards/CardsGrid';
 
 const Main = () => {
     const cardsData = [
-        {id: 1, clicked: true},
+        {id: 1, clicked: false},
         {id: 2, clicked: false},
         {id: 3, clicked: false},
         {id: 4, clicked: false},
@@ -16,13 +16,28 @@ const Main = () => {
     const [cards, setCards] = useState(cardsData);
     // const [gameOver, setGameOver] = useState(false);
 
-    const handlehighscore = () => {
+    const handleHighscore = () => { // checks if new high-score with each update
         setHighScore(() => {
             if (currentScore > highScore) {
                 return currentScore;
             }
             return highScore;
         });
+    }
+
+    const handleCardShuffle = () => { // shuffle cards using Fisher-Yates method
+        let cardsCopy = cards;
+        let currentIndex = cards.length;
+        let randomIndex;
+
+        while (currentIndex !== 0) {
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+            [cardsCopy[currentIndex], cardsCopy[randomIndex]] = [
+                cardsCopy[randomIndex], cardsCopy[currentIndex]];
+        }
+
+        setCards(cardsCopy);
     }
 
     const handleCardClick = (id) => {
@@ -35,11 +50,11 @@ const Main = () => {
             }
             return currentScore;
         });
-        // setCurrentScore(newScore);
     }
 
     useEffect(() => {
-        handlehighscore();
+        handleHighscore();
+        handleCardShuffle();
     })
 
     return (

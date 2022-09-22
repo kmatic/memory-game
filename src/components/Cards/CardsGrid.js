@@ -10,6 +10,7 @@ const CardsGrid = ({ cards, onClick }) => {
                     <CardItem
                         card={card}
                         onClick={onClick}
+                        key={card.id}
                     />    
                 );
             })}
