@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Scoreboard from './Scoreboard/Scoreboard';
-import Cards from './Cards/Cards';
+import CardsGrid from './Cards/CardsGrid';
 
 const Main = () => {
+    const cardsData = [
+        {id: 1, clicked: true},
+        {id: 2, clicked: false},
+        {id: 3, clicked: false},
+        {id: 4, clicked: false},
+    ];
+
     const [currentScore, setCurrentScore] = useState(0);
-    const [highScore, setHighScore] = useState(10);
+    const [highScore, setHighScore] = useState(2);
+    const [cards, setCards] = useState(cardsData);
     // const [gameOver, setGameOver] = useState(false);
 
-    const Handlehighscore = () => {
+    const handlehighscore = () => {
         setHighScore(() => {
             if (currentScore > highScore) {
                 return currentScore;
@@ -17,12 +25,21 @@ const Main = () => {
         });
     }
 
-    const Handlescore = () => {
-        setCurrentScore(currentScore + 1);
+    const handleCardClick = (id) => {
+        setCurrentScore(() => {
+            for (const card of cards) {
+                if (card.id === id && card.clicked === false) {
+                    card.clicked = true;
+                    return (currentScore + 1);
+                }
+            }
+            return currentScore;
+        });
+        // setCurrentScore(newScore);
     }
 
     useEffect(() => {
-        Handlehighscore();
+        handlehighscore();
     })
 
     return (
@@ -30,9 +47,11 @@ const Main = () => {
             <Scoreboard
                 currentScore={currentScore}
                 highScore={highScore}
-                onClick={Handlescore}
             />
-            <Cards />
+            <CardsGrid
+                cards={cards}
+                onClick={handleCardClick}
+            />
         </MainWrapper>
     );
 }
