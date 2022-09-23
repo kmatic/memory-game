@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import CardItem from "./CardItem";
 
-const CardsGrid = ({ cards, onClick }) => {
+const GameOn = ({ cards, onClick}) => {
     return (
-        <div>
-            <p> this is the cards </p>
+        <>
             {cards.map(card => {
                 return (
                     <CardItem
@@ -14,6 +13,34 @@ const CardsGrid = ({ cards, onClick }) => {
                     />    
                 );
             })}
+        </>
+    );
+}
+
+const GameOver = (props) => {
+    return (
+        <>
+            <p>THE GAME IS OVER</p>
+            <button>Play Again</button>
+        </>
+    );
+}
+
+const CardsGrid = ({ cards, onClick, gameOver }) => {
+    if (!gameOver) {
+        return (
+            <div>
+                <p> this is the cards </p>
+                <GameOn
+                    cards={cards}
+                    onClick={onClick}
+                />
+            </div>
+        );
+    }
+    return (
+        <div>
+            <GameOver />
         </div>
     );
 }

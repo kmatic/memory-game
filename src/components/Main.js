@@ -14,7 +14,7 @@ const Main = () => {
     const [currentScore, setCurrentScore] = useState(0);
     const [highScore, setHighScore] = useState(2);
     const [cards, setCards] = useState(cardsData);
-    // const [gameOver, setGameOver] = useState(false);
+    const [gameOver, setGameOver] = useState(false);
 
     const handleHighscore = () => { // checks if new high-score with each update
         setHighScore(() => {
@@ -40,7 +40,20 @@ const Main = () => {
         setCards(cardsCopy);
     }
 
+    const handleReset = () => {
+
+    }
+
     const handleCardClick = (id) => {
+        setGameOver(() => {
+            for (const card of cards) {
+                if (card.id === id && card.clicked === true) {
+                    return true;
+                }
+            }
+            return false;
+        });
+
         setCurrentScore(() => {
             for (const card of cards) {
                 if (card.id === id && card.clicked === false) {
@@ -66,6 +79,7 @@ const Main = () => {
             <CardsGrid
                 cards={cards}
                 onClick={handleCardClick}
+                gameOver={gameOver}
             />
         </MainWrapper>
     );
