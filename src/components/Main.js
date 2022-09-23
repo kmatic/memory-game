@@ -2,15 +2,9 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Scoreboard from './Scoreboard/Scoreboard';
 import CardsGrid from './Cards/CardsGrid';
+import cardsData from '../cardsData';
 
 const Main = () => {
-    const cardsData = [
-        {id: 1, clicked: false},
-        {id: 2, clicked: false},
-        {id: 3, clicked: false},
-        {id: 4, clicked: false},
-    ];
-
     const [currentScore, setCurrentScore] = useState(0);
     const [highScore, setHighScore] = useState(2);
     const [cards, setCards] = useState(cardsData);
@@ -41,7 +35,15 @@ const Main = () => {
     }
 
     const handleReset = () => {
+        setGameOver(false);
+        setCurrentScore(0);
 
+        setCards(() => {
+            for (const card of cards) {
+                card.clicked = false;
+            }
+            return cards;
+        });
     }
 
     const handleCardClick = (id) => {
@@ -80,6 +82,7 @@ const Main = () => {
                 cards={cards}
                 onClick={handleCardClick}
                 gameOver={gameOver}
+                handleReset={handleReset}
             />
         </MainWrapper>
     );

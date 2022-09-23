@@ -17,16 +17,16 @@ const GameOn = ({ cards, onClick}) => {
     );
 }
 
-const GameOver = (props) => {
+const GameOver = ({ handleReset }) => {
     return (
         <>
             <p>THE GAME IS OVER</p>
-            <button>Play Again</button>
+            <button onClick={handleReset}>Play Again</button>
         </>
     );
 }
 
-const CardsGrid = ({ cards, onClick, gameOver }) => {
+const CardsGrid = ({ cards, onClick, gameOver, handleReset }) => {
     if (!gameOver) {
         return (
             <div>
@@ -40,7 +40,9 @@ const CardsGrid = ({ cards, onClick, gameOver }) => {
     }
     return (
         <div>
-            <GameOver />
+            <GameOver 
+                handleReset={handleReset}
+            />
         </div>
     );
 }
