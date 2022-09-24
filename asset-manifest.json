@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/memory-game/static/js/main.96c0d0eb.js",
+    "main.js": "/memory-game/static/js/main.8cfe8103.js",
     "static/media/naruto.jpg": "/memory-game/static/media/naruto.fa2df273788697c9d247.jpg",
     "static/media/light.jpg": "/memory-game/static/media/light.40175c2918aa405a138b.jpg",
     "static/media/mob.jpg": "/memory-game/static/media/mob.50b051a0d9b5be56e145.jpg",
@@ -12,9 +12,9 @@
     "static/media/gon.jpg": "/memory-game/static/media/gon.c09f0b0b6d0b61da15ed.jpg",
     "static/media/tanjiro.jpg": "/memory-game/static/media/tanjiro.b70f36a0f49882c66f41.jpg",
     "index.html": "/memory-game/index.html",
-    "main.96c0d0eb.js.map": "/memory-game/static/js/main.96c0d0eb.js.map"
+    "main.8cfe8103.js.map": "/memory-game/static/js/main.8cfe8103.js.map"
   },
   "entrypoints": [
-    "static/js/main.96c0d0eb.js"
+    "static/js/main.8cfe8103.js"
   ]
 }
