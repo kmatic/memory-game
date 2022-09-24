@@ -34,7 +34,8 @@ const Main = () => {
         setCards(cardsCopy);
     }
 
-    const handleReset = () => {
+    const handleReset = (e) => {
+        e.preventDefault();
         setGameOver(false);
         setCurrentScore(0);
 
@@ -89,7 +90,12 @@ const Main = () => {
 }
 
 const MainWrapper = styled.div`
-
+    padding: 40px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
 `;
 
 export default Main;

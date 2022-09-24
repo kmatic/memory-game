@@ -7,7 +7,7 @@ import gon from './assets/images/gon.jpg';
 import light from './assets/images/light.jpg';
 import luffy from './assets/images/luffy.jpg';
 import mob from './assets/images/mob.jpg';
-import spike from './assets/images/spike.jpg';
+import deku from './assets/images/deku.jpg';
 import tanjiro from './assets/images/tanjiro.jpg';
 
 const cardsData = [
@@ -61,8 +61,8 @@ const cardsData = [
     },
     {
         id: uuidv4(),
-        img: spike,
-        name: 'Spike Spiegel',
+        img: deku,
+        name: 'Deku',
         clicked: false,
     },
     {
