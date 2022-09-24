@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/memory-game/static/js/main.96c0d0eb.js",
+    "static/media/naruto.jpg": "/memory-game/static/media/naruto.fa2df273788697c9d247.jpg",
+    "static/media/light.jpg": "/memory-game/static/media/light.40175c2918aa405a138b.jpg",
+    "static/media/mob.jpg": "/memory-game/static/media/mob.50b051a0d9b5be56e145.jpg",
+    "static/media/deku.jpg": "/memory-game/static/media/deku.746368cfc3a29dc95c4f.jpg",
+    "static/media/edward.jpg": "/memory-game/static/media/edward.494a41ff4c4d8bbcd85b.jpg",
+    "static/media/eren.jpg": "/memory-game/static/media/eren.bc7c54b801a5689c539d.jpg",
+    "static/media/gojo.jpg": "/memory-game/static/media/gojo.fbce9072cea358296abf.jpg",
+    "static/media/luffy.jpg": "/memory-game/static/media/luffy.5d576472df4d3e74b157.jpg",
+    "static/media/gon.jpg": "/memory-game/static/media/gon.c09f0b0b6d0b61da15ed.jpg",
+    "static/media/tanjiro.jpg": "/memory-game/static/media/tanjiro.b70f36a0f49882c66f41.jpg",
+    "index.html": "/memory-game/index.html",
+    "main.96c0d0eb.js.map": "/memory-game/static/js/main.96c0d0eb.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.96c0d0eb.js"
+  ]
+}
