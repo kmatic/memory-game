@@ -26,7 +26,25 @@ const GameOver = ({ handleReset }) => {
     );
 }
 
-const CardsGrid = ({ cards, onClick, gameOver, handleReset }) => {
+const GameWin = ({ handleReset }) => {
+    return (
+        <>
+            <h1>YOU WON THE GAME</h1>
+            <button onClick={handleReset}>Restart</button>
+        </>
+    );
+}
+
+const CardsGrid = ({ cards, onClick, gameOver, handleReset, winState }) => {
+    if (winState) {
+        return (
+            <GameWinWrapper>
+                <GameWin
+                    handleReset={handleReset}
+                />
+            </GameWinWrapper>
+        );
+    }
     if (!gameOver) {
         return (
             <GameOnWrapper>
@@ -78,6 +96,9 @@ const GameOnWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
     gap: 30px;
+`;
+
+const GameWinWrapper = styled(GameOverWrapper)`
 `;
 
 export default CardsGrid;

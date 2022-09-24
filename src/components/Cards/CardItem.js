@@ -15,7 +15,7 @@ const Div = styled.div`
     justify-self: center;
     align-self: start;
     width: 280px;
-    height: 350px;
+    height: 340px;
     border-radius: 15px;
     background-color: #BEC6D6;
     box-shadow: rgba(0, 0, 0, 0.4) 0px 0px 11px;

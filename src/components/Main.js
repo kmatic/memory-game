@@ -6,9 +6,10 @@ import cardsData from '../cardsData';
 
 const Main = () => {
     const [currentScore, setCurrentScore] = useState(0);
-    const [highScore, setHighScore] = useState(2);
+    const [highScore, setHighScore] = useState(0);
     const [cards, setCards] = useState(cardsData);
     const [gameOver, setGameOver] = useState(false);
+    const [winState, setWinState] = useState(false);
 
     const handleHighscore = () => { // checks if new high-score with each update
         setHighScore(() => {
@@ -68,9 +69,16 @@ const Main = () => {
         });
     }
 
+    const handleGameWin = () => {
+        setWinState(() => {
+            return (currentScore === 10) ? true : false; 
+        })
+    }
+
     useEffect(() => {
         handleHighscore();
         handleCardShuffle();
+        handleGameWin();
     })
 
     return (
@@ -84,13 +92,14 @@ const Main = () => {
                 onClick={handleCardClick}
                 gameOver={gameOver}
                 handleReset={handleReset}
+                winState={winState}
             />
         </MainWrapper>
     );
 }
 
 const MainWrapper = styled.div`
-    padding: 40px 25px;
+    padding: 25px 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
